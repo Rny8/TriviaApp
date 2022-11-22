@@ -40,4 +40,12 @@ body {
     justify-content: center;
     display: flex;
     margin: auto;
+    vertical-align: middle;
+    text-align: center;
 }
+
+.outerDiv {
+    height: 100vh;
+    text-align: center;
+}
+
