@@ -7,7 +7,7 @@ function App() {
   const [score, setScore] = useState(0)
   return (
     <div className='outerContainer'>
-      <h1 className='text pageTitle'>Rny's Trivia</h1>
+      <h1 className='text pageTitle'>Rny8's Trivia</h1>
       <h2 className="score">Score: {score}</h2>
       <div className='centerDiv'>
       </div>

@@ -31,12 +31,15 @@
 
 
 .buttonRows {
-    margin: 2%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
 }
 
 .centerDiv{
     justify-content: center;
     display: flex;
+    margin: auto;
 }
 
 .answerButtons {
