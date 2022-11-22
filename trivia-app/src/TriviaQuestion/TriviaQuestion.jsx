@@ -42,6 +42,7 @@ export default function TriviaQuestion(props) {
                     <div className='outerCountdownLine d-flex justify-content-left text-left w-100'>
                         <div className={roundOver ? `countdownLine countdownLineStart` : `countdownLine`}></div>
                     </div>
+                    <div className='innerDiv'>
                     <h2 className='question p-3'>{question}</h2>
                     <div className='row'>
                         {
@@ -64,6 +65,7 @@ export default function TriviaQuestion(props) {
                                 </div>
                             </>
                         }
+                    </div>
                     </div>
                 </div>
             </div>

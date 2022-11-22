@@ -35,3 +35,9 @@ body {
     text-align: center;
     margin: 1%;
 }
+
+.innerDiv {
+    justify-content: center;
+    display: flex;
+    margin: auto;
+}
