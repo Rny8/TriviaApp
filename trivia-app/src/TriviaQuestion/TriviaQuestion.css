@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+.questionButton{
+    transition: 0.2s;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 0.5rem;
+    font-size: 150%;
+    height: 15rem;
+    border: none;
+    margin: 2%;
+    background-color: rgba(0, 0, 0, 0.475);
+    color: white;
+}.questionButton:hover {
+    transition: 0.2s;
+    cursor: pointer;
+    transform: scale(105%);
+    background-color: #5c5a51;
+}.questionButtonDisabled{
+    transition: 0.2s;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 0.5rem;
+    font-size: 150%;
+    height: 15rem;
+    border: none;
+    margin: 2%;
+    background-color: rgba(0, 0, 0, 0.475);
+    color: white;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+
+.buttonRows {
+    margin: 2%;
+}
+
+.centerDiv{
+    justify-content: center;
+    display: flex;
+}
+
+.answerButtons {
+    width: 50%;
+    height: 1rem;
+}
+
+.divider {
+    color: white;
+}
+
+.question{
+    color: white;
+    text-align: center;
+    background-color: var(--second-Background-color);
+    border-radius: 0.5rem;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.countdownLine{
+    opacity: 0;
+    background-color: orange;
+    border-radius: 0.1rem;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    height: 0.5rem;
+    width: 100%;
+}.countdownLineStart{
+    animation-name: countDownAnim;
+    animation-duration: 5s;
+    animation-timing-function: linear;
+}
+
+@keyframes countDownAnim {
+    0% {
+        opacity: 1;
+        width: 100%;
+    }
+
+    100% {
+        opacity: 1;
+        width: 0%;
+        background-color: red;
+    }
+}
