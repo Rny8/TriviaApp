@@ -60,6 +60,11 @@
     border-top-right-radius: 0;
 }
 
+.highScore {
+    color: white;
+    margin: 2%;
+}
+
 .countdownLine{
     opacity: 0.5;
     background-color: gray;
@@ -72,6 +77,14 @@
     animation-name: countDownAnim;
     animation-duration: 5s;
     animation-timing-function: linear;
+}
+
+.spinner-border {
+    color: white;
+}
+
+.dropdown {
+    top: -1.5%;
 }
 
 @keyframes countDownAnim {

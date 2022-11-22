@@ -28,6 +28,7 @@ export default function AnswerButton(props) {
 
     useEffect(() => {
         setDisabled(false);
+        props.setHighScore(localStorage.getItem("highScore"))
     }, [])
 
     const correctColor = "#097631";
@@ -38,6 +39,10 @@ export default function AnswerButton(props) {
             props.setScore(props.score + 1);
         }
         else{
+            if (props.score > props.highScore) {
+                props.setHighScore(props.score)
+                localStorage.setItem("highScore", props.score)
+            }
             props.setScore(0)
         }
         await delay(5000);
