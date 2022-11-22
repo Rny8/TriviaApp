@@ -3,7 +3,7 @@ import AnswerButton from '../answerButton/AnswerButton';
 
 import "./TriviaQuestion.css";
 
-export default function TriviaQuestion() {
+export default function TriviaQuestion(props) {
 
     function getRandomQuestion(){
         fetch("https://the-trivia-api.com/api/questions?limit=1", {
@@ -34,6 +34,7 @@ export default function TriviaQuestion() {
     const [roundOver, setRoundOver] = useState(false)
 
 
+
     return (
         <div className='outerDiv'>
             <div className='container centerDiv d-flex justify-content-center'>
@@ -47,18 +48,18 @@ export default function TriviaQuestion() {
                             answers && <>
                                 <div className='col text-center'>
                                     <div className='row buttonRows'>
-                                        <AnswerButton value={answers[0].value} correct={answers[0].correct} roundOver={roundOver} setRoundOver={setRoundOver} getRandomQuestion={getRandomQuestion}/>
+                                        <AnswerButton value={answers[0].value} correct={answers[0].correct} roundOver={roundOver} setRoundOver={setRoundOver} getRandomQuestion={getRandomQuestion} score={props.score} setScore={props.setScore}/>
                                     </div>
                                     <div className='row buttonRows'>
-                                        <AnswerButton value={answers[1].value} correct={answers[1].correct} roundOver={roundOver} setRoundOver={setRoundOver} getRandomQuestion={getRandomQuestion}/>
+                                        <AnswerButton value={answers[1].value} correct={answers[1].correct} roundOver={roundOver} setRoundOver={setRoundOver} getRandomQuestion={getRandomQuestion} score={props.score} setScore={props.setScore}/>
                                     </div>
                                 </div>
                                 <div className='col text-center'>
                                     <div className='row buttonRows'>
-                                        <AnswerButton value={answers[2].value} correct={answers[2].correct} roundOver={roundOver} setRoundOver={setRoundOver} getRandomQuestion={getRandomQuestion}/>
+                                        <AnswerButton value={answers[2].value} correct={answers[2].correct} roundOver={roundOver} setRoundOver={setRoundOver} getRandomQuestion={getRandomQuestion} score={props.score} setScore={props.setScore}/>
                                     </div>
                                     <div className='row buttonRows'>
-                                        <AnswerButton value={answers[3].value} correct={answers[3].correct} roundOver={roundOver} setRoundOver={setRoundOver} getRandomQuestion={getRandomQuestion}/>
+                                        <AnswerButton value={answers[3].value} correct={answers[3].correct} roundOver={roundOver} setRoundOver={setRoundOver} getRandomQuestion={getRandomQuestion} score={props.score} setScore={props.setScore}/>
                                     </div>
                                 </div>
                             </>

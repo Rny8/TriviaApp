@@ -2,51 +2,62 @@ import TriviaQuestion from "../TriviaQuestion/TriviaQuestion";
 import "../TriviaQuestion/TriviaQuestion.css"
 import React, { useState } from 'react'
 import { useEffect } from "react";
+import { useRef } from "react";
 
 export default function AnswerButton(props) {
 
-    const [color, setColor] = useState(null)
+    const [color, setColor] = useState(null);
 
-    const [disabled, setDisabled] = useState(false)
+    const [disabled, setDisabled] = useState(false);
 
     const delay = ms => new Promise(res => setTimeout(res, ms));
+
+    let userIsCorrect = useRef(false)
 
     useEffect(() => {
         setDisabled(true)
         if (props.correct && props.roundOver){
-            setColor(correctColor)
-            newRound()
+            setColor(correctColor);
+            newRound();
         }
         if(!props.roundOver){
-            setColor(null)
-            setDisabled(false)
+            setColor(null);
+            setDisabled(false);
         }
-    }, [props.roundOver])
+    }, [props.roundOver]);
 
     useEffect(() => {
-        setDisabled(false)
+        setDisabled(false);
     }, [])
 
     const correctColor = "#097631";
     const incorrectColor = "#c42e21";
 
     async function newRound(){
+        if (userIsCorrect.current) {
+            props.setScore(props.score + 1);
+        }
+        else{
+            props.setScore(0)
+        }
         await delay(5000);
-        props.getRandomQuestion()
-        setDisabled(false)
-        props.setRoundOver(false)
-        setColor(null)
+        props.getRandomQuestion();
+        setDisabled(false);
+        props.setRoundOver(false);
+        setColor(null);
+        userIsCorrect.current = false;
     }
 
 
     function handleClick(){
-        console.log(props.roundOver)
+        console.log(props.roundOver);
         if (!props.roundOver) {
             if (props.correct === true) {
-                setColor(correctColor)
+                setColor(correctColor);
+                userIsCorrect.current = true;
             }
             else{
-                setColor(incorrectColor)
+                setColor(incorrectColor);
             }
             props.setRoundOver(true);
         }

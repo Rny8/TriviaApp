@@ -30,4 +30,8 @@ body {
 }
 
 
-
+.score{
+    color: white;
+    text-align: center;
+    margin: 1%;
+}
