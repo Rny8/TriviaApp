@@ -47,5 +47,10 @@ body {
 .outerDiv {
     height: 100vh;
     text-align: center;
+    
+}
+
+.outerContainer {
+    margin-bottom: 10%;
 }
 
