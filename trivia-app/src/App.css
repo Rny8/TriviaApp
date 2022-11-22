@@ -22,5 +22,12 @@ body {
     font-size: 2vw;
 }
 
+@media screen and (max-width: 576px) {
+    .pageTitle{
+        font-size: 250%;
+        text-align: center;
+    }
+}
+
 
 

@@ -58,8 +58,8 @@
 }
 
 .countdownLine{
-    opacity: 0;
-    background-color: orange;
+    opacity: 0.5;
+    background-color: gray;
     border-radius: 0.1rem;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
@@ -73,8 +73,13 @@
 
 @keyframes countDownAnim {
     0% {
+        background-color: green;
         opacity: 1;
         width: 100%;
+    }
+
+    50% {
+        background-color: orange;
     }
 
     100% {
